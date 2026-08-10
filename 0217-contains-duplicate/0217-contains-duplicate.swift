@@ -1,5 +1,15 @@
 class Solution {
     func containsDuplicate(_ nums: [Int]) -> Bool {
-        return Set(nums).count != nums.count
+       var seen =  Set<Int>()
+       for num in nums{
+        if(seen.contains(num)){
+            return true
+        }
+        else{
+            seen.insert(num)
+        }
+       }
+
+       return false
     }
 }
